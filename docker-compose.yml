@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./server
+    container_name: elice-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - FRONTEND_ORIGIN=http://localhost:3000
+    volumes:
+      - ./server/data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/api/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - elice-network
+
+  frontend:
+    build: ./client
+    container_name: elice-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - elice-network
+
+networks:
+  elice-network:
+    driver: bridge
+
+volumes:
+  backend-data:
