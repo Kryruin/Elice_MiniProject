@@ -11,8 +11,8 @@ A full-stack web application that integrates with external APIs to create a comp
 ## Quick Start with Docker
 
 ### Prerequisites
-- Docker
-- Docker Compose
+- Check Readmes in client and server folders
+
 
 ### Run the Application
 
@@ -25,7 +25,7 @@ docker-compose up -d --build
 ```
 
 ### Access the Application
-- Frontend: http://localhost:3000 (Docker) / http://localhost:5173 (Development)
+- Frontend: http://localhost:5173 (Development)
 - Backend API: http://localhost:8000
 - API Health Check: http://localhost:8000/api/health
 
@@ -75,7 +75,7 @@ See `docs/integration.md` for external API integration details and security cons
 - Pydantic for data validation
 
 ### External Services
-- Youtube Data APIfor educational content
+- Youtube Data API for educational content
 - YouTube Data API v3 for C++ programming videos
 
 ## Docker Services
