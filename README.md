@@ -6,7 +6,7 @@ A full-stack web application that integrates with external APIs to create a comp
 
 - **Frontend**: React + TypeScript + Vite
 - **Backend**: FastAPI + Python + SQLite
-- **External API**: Open Library for educational content
+- **External API**: Youtube Data API for educational content
 
 ## Quick Start with Docker
 
@@ -52,7 +52,7 @@ See `docs/integration.md` for external API integration details and security cons
 
 ## Features
 
-- **Search**: Find educational resources using Open Library API
+- **Search**: Find educational resources using Youtube Data API
 - **YouTube Integration**: Search and watch C++ programming videos
 - **Save**: Bookmark resources and videos for later reference
 - **Progress**: Track learning progress with status and percentage
@@ -75,7 +75,7 @@ See `docs/integration.md` for external API integration details and security cons
 - Pydantic for data validation
 
 ### External Services
-- Open Library Search API for educational content
+- Youtube Data APIfor educational content
 - YouTube Data API v3 for C++ programming videos
 
 ## Docker Services
